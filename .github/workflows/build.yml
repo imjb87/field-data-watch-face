@@ -27,6 +27,23 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
+      - name: Check out the official WFF validator
+        uses: actions/checkout@v4
+        with:
+          repository: google/watchface
+          path: wff-validator
+          sparse-checkout: third_party/wff
+
+      - name: Build the WFF validator
+        working-directory: wff-validator/third_party/wff
+        run: ./gradlew :specification:validator:executable-jar
+
+      - name: Validate the watch face XML
+        run: >-
+          java -jar
+          wff-validator/third_party/wff/specification/validator/build/libs/wff-validator.jar
+          1 watchface/src/main/res/raw/watchface.xml
+
       - name: Build debug APK
         run: ./gradlew :watchface:assembleDebug --stacktrace
 

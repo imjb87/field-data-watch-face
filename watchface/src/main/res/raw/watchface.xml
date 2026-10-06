@@ -73,7 +73,7 @@
     <!-- Steps -->
     <PartText x="54" y="298" width="156" height="26">
       <Variant mode="AMBIENT" target="alpha" value="0" />
-      <Text align="LEFT">
+      <Text align="START">
         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#ff76907d">
           STEPS
         </Font>
@@ -81,7 +81,7 @@
     </PartText>
     <PartText x="54" y="322" width="170" height="50">
       <Variant mode="AMBIENT" target="alpha" value="0" />
-      <Text align="LEFT">
+      <Text align="START">
         <Font family="SYNC_TO_DEVICE" size="37" weight="BOLD" color="#ffc9f27b">
           <Template><![CDATA[%05d]]>
             <Parameter expression="[STEP_COUNT]" />
@@ -91,7 +91,7 @@
     </PartText>
     <PartText x="54" y="366" width="170" height="26">
       <Variant mode="AMBIENT" target="alpha" value="0" />
-      <Text align="LEFT">
+      <Text align="START">
         <Font family="SYNC_TO_DEVICE" size="19" color="#ff8fa89a">
           <Template><![CDATA[%d%% OF GOAL]]>
             <Parameter expression="[STEP_PERCENT]" />
@@ -103,7 +103,7 @@
     <!-- Battery -->
     <PartText x="274" y="298" width="122" height="26">
       <Variant mode="AMBIENT" target="alpha" value="0" />
-      <Text align="RIGHT">
+      <Text align="END">
         <Font family="SYNC_TO_DEVICE" size="18" weight="BOLD" color="#ff76907d">
           BATTERY
         </Font>
@@ -111,7 +111,7 @@
     </PartText>
     <PartText x="244" y="322" width="152" height="50">
       <Variant mode="AMBIENT" target="alpha" value="0" />
-      <Text align="RIGHT">
+      <Text align="END">
         <Font family="SYNC_TO_DEVICE" size="37" weight="BOLD" color="#ffffb86b">
           <Template><![CDATA[%d%%]]>
             <Parameter expression="[BATTERY_PERCENT]" />
