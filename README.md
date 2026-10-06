@@ -1,8 +1,9 @@
 # Field Data Pixel
 
 Field Data Pixel is a resource-only Wear OS watch face built with Watch Face
-Format 1. It is designed for the Pixel Watch 3: a quiet dark field, a clear
-local-time readout, and useful at-a-glance data for steps and battery.
+Format 2. It is designed for the Pixel Watch 3 and Pixel Watch 4: an analogue
+dark field instrument with cream numerals, white hands, an orange seconds hand,
+and at-a-glance weather, steps, heart-rate, and date panels.
 
 ## Build locally
 
@@ -24,7 +25,7 @@ Every push to `main` runs the GitHub Actions build. The workflow uploads
 `FieldDataWatchFace.apk` as an Actions artifact and refreshes the `latest`
 GitHub Release asset.
 
-## Install on a Pixel Watch 3
+## Install on a Pixel Watch 3 or 4
 
 1. Download `FieldDataWatchFace.apk` from the repository's **Releases → latest**
    page onto the Pixel phone.

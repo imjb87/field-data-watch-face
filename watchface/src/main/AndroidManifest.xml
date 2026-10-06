@@ -29,7 +29,7 @@
         android:value="true" />
     <property
         android:name="com.google.wear.watchface.format.version"
-        android:value="1" />
+        android:value="2" />
     <property
         android:name="com.google.wear.watchface.format.publisher"
         android:value="FieldDataPixel-1.0" />

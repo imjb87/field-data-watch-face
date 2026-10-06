@@ -24,7 +24,8 @@ android {
 
     defaultConfig {
         applicationId = "com.imjb87.fielddatawatchface"
-        minSdk = 33
+        // Watch Face Format 2 is required for the live weather complication.
+        minSdk = 34
         targetSdk = 35
         versionCode = 1
         versionName = "1.0.0"
