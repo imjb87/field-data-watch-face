@@ -1,0 +1,53 @@
+name: Build Field Data Pixel
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build watch face APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build debug APK
+        run: ./gradlew :watchface:assembleDebug --stacktrace
+
+      - name: Give the APK a stable download name
+        run: cp watchface/build/outputs/apk/debug/watchface-debug.apk FieldDataWatchFace.apk
+
+      - name: Upload Actions artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: FieldDataWatchFace
+          path: FieldDataWatchFace.apk
+          if-no-files-found: error
+
+      - name: Publish latest release asset
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release view latest >/dev/null 2>&1; then
+            gh release create latest \
+              --title "Field Data Pixel (latest)" \
+              --notes "Latest debug APK for Field Data Pixel. Download FieldDataWatchFace.apk and install it with Wear Installer 2."
+          fi
+          gh release upload latest FieldDataWatchFace.apk --clobber
