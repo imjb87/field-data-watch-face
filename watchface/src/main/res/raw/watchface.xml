@@ -61,10 +61,10 @@
         <Expression name="weather_is_day">[WEATHER.IS_DAY]</Expression>
       </Expressions>
       <Compare expression="weather_is_day">
-        <PartText x="187" y="90" width="76" height="68">
+        <PartText x="190" y="103" width="70" height="48">
           <Variant mode="AMBIENT" target="alpha" value="0" />
           <Text align="CENTER">
-            <BitmapFont family="weather_icons_day" size="60">
+            <BitmapFont family="weather_icons_day" size="44">
               <Template><![CDATA[%s]]>
                 <Parameter expression="[WEATHER.CONDITION] &lt;= 15 ? [WEATHER.CONDITION] : 14" />
               </Template>
@@ -73,10 +73,10 @@
         </PartText>
       </Compare>
       <Default>
-        <PartText x="187" y="90" width="76" height="68">
+        <PartText x="190" y="103" width="70" height="48">
           <Variant mode="AMBIENT" target="alpha" value="0" />
           <Text align="CENTER">
-            <BitmapFont family="weather_icons_night" size="60">
+            <BitmapFont family="weather_icons_night" size="44">
               <Template><![CDATA[%s]]>
                 <Parameter expression="[WEATHER.CONDITION] &lt;= 15 ? [WEATHER.CONDITION] : 14" />
               </Template>
@@ -97,32 +97,32 @@
     </PartText>
 
     <!-- Steps subdial. -->
-    <PartText x="91" y="207" width="108" height="38">
+    <PartText x="100" y="210" width="90" height="30">
       <Variant mode="AMBIENT" target="alpha" value="0" />
       <Text align="CENTER">
-        <Font family="SYNC_TO_DEVICE" size="27" weight="BOLD" color="#fff4f0e8">
-          <Template><![CDATA[%s]]>
+        <Font family="SYNC_TO_DEVICE" size="24" weight="BOLD" color="#fff4f0e8">
+          <Template><![CDATA[%,d]]>
             <Parameter expression="[STEP_COUNT]" />
           </Template>
         </Font>
       </Text>
     </PartText>
-    <PartText x="91" y="238" width="108" height="25">
+    <PartText x="100" y="238" width="90" height="22">
       <Variant mode="AMBIENT" target="alpha" value="0" />
       <Text align="CENTER">
-        <Font family="SYNC_TO_DEVICE" size="17" color="#ffa4a4a4">STEPS</Font>
+        <Font family="SYNC_TO_DEVICE" size="15" color="#ffa4a4a4">STEPS</Font>
       </Text>
     </PartText>
 
     <!-- Heart-rate subdial. -->
-    <PartImage x="279" y="193" width="52" height="52">
+    <PartImage x="291" y="199" width="28" height="28">
       <Variant mode="AMBIENT" target="alpha" value="0" />
       <Image resource="heart" />
     </PartImage>
-    <PartText x="263" y="242" width="84" height="39">
+    <PartText x="268" y="239" width="74" height="34">
       <Variant mode="AMBIENT" target="alpha" value="0" />
       <Text align="CENTER">
-        <Font family="SYNC_TO_DEVICE" size="31" weight="BOLD" color="#fff4f0e8">
+        <Font family="SYNC_TO_DEVICE" size="30" weight="BOLD" color="#fff4f0e8">
           <Template><![CDATA[%s]]>
             <Parameter expression="[HEART_RATE] != null ? [HEART_RATE] : &quot;--&quot;" />
           </Template>
@@ -131,30 +131,30 @@
     </PartText>
 
     <!-- Date subdial. -->
-    <PartText x="175" y="282" width="100" height="27">
+    <PartText x="178" y="269" width="94" height="24">
       <Variant mode="AMBIENT" target="alpha" value="0" />
       <Text align="CENTER">
-        <Font family="SYNC_TO_DEVICE" size="17" color="#ffa4a4a4">
+        <Font family="SYNC_TO_DEVICE" size="16" color="#ffa4a4a4">
           <Template><![CDATA[%s]]>
             <Parameter expression="[DAY_OF_WEEK_S]" />
           </Template>
         </Font>
       </Text>
     </PartText>
-    <PartText x="175" y="304" width="100" height="42">
+    <PartText x="178" y="291" width="94" height="38">
       <Variant mode="AMBIENT" target="alpha" value="0" />
       <Text align="CENTER">
-        <Font family="SYNC_TO_DEVICE" size="33" weight="BOLD" color="#fff4f0e8">
+        <Font family="SYNC_TO_DEVICE" size="31" weight="BOLD" color="#fff4f0e8">
           <Template><![CDATA[%s]]>
             <Parameter expression="[DAY_Z]" />
           </Template>
         </Font>
       </Text>
     </PartText>
-    <PartText x="175" y="341" width="100" height="27">
+    <PartText x="178" y="327" width="94" height="24">
       <Variant mode="AMBIENT" target="alpha" value="0" />
       <Text align="CENTER">
-        <Font family="SYNC_TO_DEVICE" size="17" color="#ffa4a4a4">
+        <Font family="SYNC_TO_DEVICE" size="16" color="#ffa4a4a4">
           <Template><![CDATA[%s]]>
             <Parameter expression="[MONTH_S]" />
           </Template>
@@ -164,12 +164,12 @@
 
     <!-- The analogue clock is drawn over the data panels. -->
     <AnalogClock x="0" y="0" width="450" height="450">
-      <HourHand resource="hour" x="207" y="55" width="36" height="175"
-        pivotX="0.5" pivotY="0.9714285714" />
-      <MinuteHand resource="minute" x="210" y="25" width="30" height="205"
-        pivotX="0.5" pivotY="0.9756097561" />
-      <SecondHand resource="second" x="220" y="5" width="10" height="220"
-        pivotX="0.5" pivotY="1.0">
+      <HourHand resource="hour" x="208" y="105" width="34" height="128"
+        pivotX="0.5" pivotY="0.9375" />
+      <MinuteHand resource="minute" x="210" y="50" width="30" height="180"
+        pivotX="0.5" pivotY="0.9722222222" />
+      <SecondHand resource="second" x="218" y="65" width="14" height="220"
+        pivotX="0.5" pivotY="0.7272727273">
         <Variant mode="AMBIENT" target="alpha" value="0" />
         <Sweep frequency="15" />
       </SecondHand>
